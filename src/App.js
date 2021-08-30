@@ -1,13 +1,14 @@
 import React from 'react';
-import Login from './components/Login';
+import Navigation from './components/Navigation';
 import Register from './components/Register';
+import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="body">
+      <Navigation />
+      
 
-     <Register />
-     <Login />
     </div>
   );
 }

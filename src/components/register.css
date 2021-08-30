@@ -1,0 +1,29 @@
+.register {
+    
+        width: 400px;
+        background: rgb(226, 171, 171);
+        border: 3px solid #5279b4;
+        box-shadow: 0 5px 5px rgb(0 0 0 / 30%), 0 8px 16px rgb(0 0 0 / 10%);
+        border-radius: 8px;
+        padding: 1rem;
+    
+        
+}
+label{
+    text-align: start;
+}
+
+h3 {
+    border-radius: 10px;
+    border: 2px solid #dddfe2;
+    outline: none;
+    color: #1d2129;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    width: 95%;
+    font-size: 1rem;
+}
+h3 > input{
+   align-items: flex-end;
+   background-color: azure;
+}

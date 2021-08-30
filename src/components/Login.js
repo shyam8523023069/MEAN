@@ -1,21 +1,30 @@
 import React, {useState} from 'react'
+import axios from 'axios';
+import {Link,  useHistory } from 'react-router-dom';
 
-function Login() {
+function Login({setToken}) {
     const [username, setUsername]= useState('')
     const [password, setPassword]= useState('')
     
+    let history = useHistory()
 
     const loginsubmit = (e) => {
         e.preventDefault();
         const log = {username, password}
-    fetch('http://localhost:9000/login/', {
-        method: 'POST',
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify(log)
-    } )
-    .then(() => {
-        console.log('Login sucess....');
-    } )
+        axios.post('http://localhost:9000/login/', log)
+
+    // fetch('http://localhost:9000/login/', {
+    //     method: 'POST',
+    //     headers:{"Content-Type":"application/json"},
+    //     body:JSON.stringify(log)
+    // } )
+    .then(res =>  {
+        console.log(res)
+        alert(res.data.message)
+        setToken(res.data)
+        history.push("/")
+        
+    })
 
     }
 
@@ -35,7 +44,10 @@ function Login() {
                                     onChange ={(e) => setPassword(e.target.value) }
              />
             </h3>
-            <button>submit</button>
+            <button   >Login</button>
+            <Link to ="/register">
+            <button>Register</button>
+            </Link>
             </form>
             
         </div>
